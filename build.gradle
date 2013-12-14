@@ -1,0 +1,46 @@
+buildscript
+        {
+            repositories
+                    {
+                        mavenCentral()
+                        maven
+                                {
+                                    name = "forge"
+                                    url = "http://files.minecraftforge.net/maven"
+                                }
+                    }
+            dependencies
+                    {
+                        classpath 'net.minecraftforge.gradle:ForgeGradle:1.0-SNAPSHOT'
+                    }
+        }
+
+apply plugin: 'forge'
+apply plugin: 'scala'
+group = 'org.tivec.kthar'  // your base page
+version = "1.0.0"
+archivesBaseName = 'kthartechnomagic'
+
+minecraft {
+    version = "1.6.4-9.11.1.964"
+}
+
+version = "${minecraft.version}-$version"
+
+processResources
+        {
+            // replace stuff in text files, not binary ones.
+            from(sourceSets.main.resources.srcDirs) {
+                include '**/*.info'
+
+                // replace version and MCVersion
+                // forge version is also accessible via project.minecraftforgeVersion
+                // it contains the full minecraft version, including buildNumber
+                expand 'version':project.version, 'mcversion':project.minecraft.version
+            }
+
+            // copy everything else, thats not text
+            from(sourceSets.main.resources.srcDirs) {
+                exclude '**/*.info'
+            }
+        }

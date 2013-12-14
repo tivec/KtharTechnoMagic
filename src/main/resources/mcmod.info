@@ -1,0 +1,16 @@
+[
+{
+  "modid": "kthartechnomagic",
+  "name": "K'thar TechnoMagic",
+  "description": "A technological mod centered around magic!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["Tivec"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
