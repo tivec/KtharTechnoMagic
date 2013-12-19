@@ -1,2 +1,11 @@
 
 itemGroup.KtharTab=K'thar Techno-Magic
+
+
+item.charcoalRodAssembly.name=Charcoal Rod Assembly
+item.charcoalRod.name=Charcoal Rod
+item.redstoneInfusedRod.name=Redstone Infused Rod
+item.redstoneInfusedPiece.name=Redstone Infused Piece
+item.redstoneInfusedJoin.name=Redstone Infused Joiner
+item.redstoneInfusedCross.name=Redstone Infused Cross
+
