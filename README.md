@@ -1,4 +1,4 @@
-KtharTechnoMagic
+K'Thar Techno-Magic
 ================
 
 ## A Minecraft mod of technological magic.
