@@ -1,4 +1,4 @@
-KtharTechnoMagic
+K'Thar Techno-Magic
 ================
 
 ## A Minecraft mod of technological magic.
@@ -20,3 +20,32 @@ The magic power used to shape feats of magic is drawn from Wells of Essence. The
   * Stasis <-> Motion
 
 Little remains of the old art, and now few are able to pull and shape essence without the aid of various objects as focus. Machine blueprints were created to ease the access to the four wells, and have become a requirement to be able to access the magic power.
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2013 Henrik 'Tivec' Bergvin
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Modpacks
+
+Using this mod in a modpack is strictly forbidden without the authors permission. Seek me out on irc.esper.net, #notenoughmods or #tivec, and we can discuss permissions.
+
