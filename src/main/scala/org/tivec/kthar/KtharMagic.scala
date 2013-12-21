@@ -14,13 +14,14 @@ import org.tivec.kthar.network.client.ClientPacketHandler
 import org.tivec.kthar.network.server.ServerPacketHandler
 import org.tivec.kthar.proxies.CommonProxy
 import org.tivec.kthar.network.packets.KtharPacket
-import cpw.mods.fml.common.registry.GameRegistry
+import cpw.mods.fml.common.registry.{LanguageRegistry, GameRegistry}
 import org.tivec.kthar.items._
 import net.minecraft.item.{Item, ItemStack}
 import net.minecraftforge.oredict.{ShapedOreRecipe, OreDictionary}
 import net.minecraft.item.crafting.{CraftingManager, IRecipe}
 import java.util.{List => JList}
 import java.util
+import org.tivec.kthar.blocks.{BlockAlmanditeOre, KtharMachineBlock}
 
 
 @Mod(name = "K'thar Techno-Magic", modid = "kthartechnomagic", version = "dev", modLanguage = "scala")
@@ -93,7 +94,17 @@ object KtharMagic {
   /**
    * Registers all blocks and associated tile entities (if the tile entity exists).
    */
-  def registerBlocks() = {}
+  def registerBlocks() = {
+    def registerMachineBlock(block: KtharMachineBlock) = {
+      GameRegistry.registerBlock(block, block.getUnlocalizedName)
+
+      if(block.tileEntityClass != null)
+        GameRegistry.registerTileEntity(block.tileEntityClass, block.tileEntityClass.getCanonicalName)
+    }
+
+    //registerMachineBlock(BlockInfusedCoreCompactor)
+    GameRegistry.registerBlock(BlockAlmanditeOre, BlockAlmanditeOre.getUnlocalizedName)
+  }
 
   /**
    * Registers all items.
@@ -103,10 +114,16 @@ object KtharMagic {
 
     registerItem(ItemCharcoalRodAssembly)
     registerItem(ItemCharcoalRod)
-    registerItem(ItemRedstoneInfusedRod)
-    registerItem(ItemRedstoneInfusedPiece)
-    registerItem(ItemRedstoneInfusedCross)
-    registerItem(ItemRedstoneInfusedJoin)
+
+    registerItem(ItemRIRod)
+    registerItem(ItemRIPiece)
+    registerItem(ItemRIJoiner)
+    registerItem(ItemRICross)
+
+    registerItem(ItemCoreIron)
+    registerItem(ItemCoreGold)
+    registerItem(ItemCoreDiamond)
+
   }
 
   /**

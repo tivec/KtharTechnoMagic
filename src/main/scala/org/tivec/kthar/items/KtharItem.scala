@@ -19,6 +19,6 @@ class KtharItem(itemID: Int, unlocalizedName: String) extends Item(itemID) {
    */
   @SideOnly(Side.CLIENT)
   override def registerIcons(iconRegister: IconRegister) = {
-    itemIcon = iconRegister.registerIcon(KtharMagic.ASSET_DIR + ":" + getUnlocalizedName)
+    itemIcon = iconRegister.registerIcon(s"${KtharMagic.ASSET_DIR}:${getUnlocalizedName}")
   }
 }

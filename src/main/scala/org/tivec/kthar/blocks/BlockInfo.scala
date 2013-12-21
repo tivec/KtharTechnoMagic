@@ -6,4 +6,9 @@ package org.tivec.kthar.blocks
 object BlockInfo {
   final val CATEGORY: String = "Blocks"
 
+  var InfusedCoreCompactorID = 3600
+  val InfusedCoreCompactorKey = "infusedCoreCompactor"
+
+  var AlmanditeOreID = 3601
+  val AlmanditeOreKey = "almanditeOre"
 }

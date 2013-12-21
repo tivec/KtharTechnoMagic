@@ -36,6 +36,7 @@ task buildInfo {
 
 minecraft {
     version = "1.6.4-9.11.1.964"
+    assetDir = "runtime/assets"
 }
 
 version = "${minecraft.version}-$version-${buildInfo.revision}"

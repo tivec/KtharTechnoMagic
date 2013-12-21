@@ -15,9 +15,11 @@ object ItemRecipes {
      ********************************************************/
     GameRegistry.addRecipe(new ShapedOreRecipe(
       new ItemStack(ItemCharcoalRodAssembly),
-      "//",
-      "//",
-      '/':Character, "stickWood"
+      "/ /",
+      " c ",
+      "/ /",
+      '/':Character, "stickWood",
+      'c':Character, new ItemStack(Item.coal,1,1)
       ))
 
     /********************************************************
@@ -30,18 +32,18 @@ object ItemRecipes {
      ********************************************************/
 
     // Rod into 2 pieces
-    GameRegistry.addShapelessRecipe(new ItemStack(ItemRedstoneInfusedPiece, 2), new ItemStack(ItemRedstoneInfusedRod))
+    GameRegistry.addShapelessRecipe(new ItemStack(ItemRIPiece,2), new ItemStack(ItemRIRod))
     // Joiner into 3 pieces
-    GameRegistry.addShapelessRecipe(new ItemStack(ItemRedstoneInfusedPiece, 3), new ItemStack(ItemRedstoneInfusedJoin))
+    GameRegistry.addShapelessRecipe(new ItemStack(ItemRIPiece,3), new ItemStack(ItemRIJoiner))
     // Cross into 4 pieces
-    GameRegistry.addShapelessRecipe(new ItemStack(ItemRedstoneInfusedPiece, 4), new ItemStack(ItemRedstoneInfusedCross))
+    GameRegistry.addShapelessRecipe(new ItemStack(ItemRIPiece,4), new ItemStack(ItemRICross))
 
     /********************************************************
      * Redstone Infused Rods
      ********************************************************/
     // Infused rod from charcoal rods and redstone
     GameRegistry.addRecipe(new ShapedOreRecipe(
-      new ItemStack(ItemRedstoneInfusedRod),
+      new ItemStack(ItemRIRod),
       "r  ",
       " / ",
       "  r",
@@ -50,26 +52,26 @@ object ItemRecipes {
 
     // Infused rod from two pieces and redstone
     GameRegistry.addRecipe(new ShapedOreRecipe(
-      new ItemStack(ItemRedstoneInfusedRod),
+      new ItemStack(ItemRIRod),
       "/  ",
       " r ",
       "  /",
-      '/':Character, ItemRedstoneInfusedPiece,
+      '/':Character, new ItemStack(ItemRIPiece),
       'r':Character, Item.redstone))
 
     // Breaking apart the Infused Crosses into rods
-    GameRegistry.addShapelessRecipe(new ItemStack(ItemRedstoneInfusedRod, 2), new ItemStack(ItemRedstoneInfusedCross))
+    GameRegistry.addShapelessRecipe(new ItemStack(ItemRIRod,2), new ItemStack(ItemRICross))
 
     /********************************************************
      * Redstone Infused Joiner
      ********************************************************/
     // Crafting the Joiner with pieces and redstone
     GameRegistry.addRecipe(new ShapedOreRecipe(
-      new ItemStack(ItemRedstoneInfusedJoin),
+      new ItemStack(ItemRIJoiner),
       "/ /",
       " r ",
       "  /",
-      '/':Character, ItemRedstoneInfusedPiece,
+      '/':Character, new ItemStack(ItemRIPiece),
       'r':Character, Item.redstone))
 
     /********************************************************
@@ -77,11 +79,11 @@ object ItemRecipes {
      ********************************************************/
     // Crafting the Cross with pieces and redstone
     GameRegistry.addRecipe(new ShapedOreRecipe(
-      new ItemStack(ItemRedstoneInfusedCross),
+      new ItemStack(ItemRICross),
       "/ /",
       " r ",
       "/ /",
-      '/':Character, ItemRedstoneInfusedPiece,
+      '/':Character, new ItemStack(ItemRIPiece),
       'r':Character, Item.redstone))
 
 

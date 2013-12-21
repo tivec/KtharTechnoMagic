@@ -1,9 +1,11 @@
 package org.tivec.kthar.items
 
+import scala.collection.immutable
 /**
  * @author Henrik 'Tivec' Bergvin
  */
 object ItemInfo {
+  final val CATEGORY: String = "Items"
 
   // Charcoal Rod
   var CharcoalRodAssemblyID = 25000
@@ -15,18 +17,31 @@ object ItemInfo {
 
   // Redstone Infused Rod
   var RedstoneInfusedRodID = 25002
-  var RedstoneInfusedRodKey = "redstoneInfusedRod"
+  val RedstoneInfusedRodKey = "redstoneInfusedRod"
 
   // Redstone Infused Split
   var RedstoneInfusedPieceID = 25003
-  var RedstoneInfusedPieceKey = "redstoneInfusedPiece"
+  val RedstoneInfusedPieceKey = "redstoneInfusedPiece"
 
   // Redstone Infused Cross
   var RedstoneInfusedCrossID = 25004
-  var RedstoneInfusedCrossKey = "redstoneInfusedCross"
+  val RedstoneInfusedCrossKey = "redstoneInfusedCross"
 
   // Redstone Infused Cross
   var RedstoneInfusedJoinID = 25005
-  var RedstoneInfusedJoinKey = "redstoneInfusedJoin"
+  val RedstoneInfusedJoinKey = "redstoneInfusedJoin"
+
+  // Iron Core
+  var IronCoreID = 25006
+  val IronCoreKey = "ironCore"
+
+  // Gold Core
+  var GoldCoreID = 25007
+  val GoldCoreKey = "goldCore"
+
+  // Gold Core
+  var DiamondCoreID = 25008
+  val DiamondCoreKey = "diamondCore"
+
 
 }
