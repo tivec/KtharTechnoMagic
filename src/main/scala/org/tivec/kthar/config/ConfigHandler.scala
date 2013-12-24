@@ -27,7 +27,7 @@ object ConfigHandler {
     ItemInfo.DiamondCoreID            = config.getItem(ItemInfo.CATEGORY, ItemInfo.DiamondCoreKey, ItemInfo.DiamondCoreID).getInt - 256
 
     BlockInfo.InfusedCoreCompactorID  = config.getBlock(BlockInfo.CATEGORY, BlockInfo.InfusedCoreCompactorKey, BlockInfo.InfusedCoreCompactorID).getInt
-    BlockInfo.AlmanditeOreID          = config.getBlock(BlockInfo.CATEGORY, BlockInfo.AlmanditeOreKey, BlockInfo.AlmanditeOreID).getInt
+    BlockInfo.TharditeOreID          = config.getBlock(BlockInfo.CATEGORY, BlockInfo.TharditeOreKey, BlockInfo.TharditeOreID).getInt
 
     config.save()
   }

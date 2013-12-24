@@ -21,7 +21,7 @@ import net.minecraftforge.oredict.{ShapedOreRecipe, OreDictionary}
 import net.minecraft.item.crafting.{CraftingManager, IRecipe}
 import java.util.{List => JList}
 import java.util
-import org.tivec.kthar.blocks.{BlockAlmanditeOre, KtharMachineBlock}
+import org.tivec.kthar.blocks.{ItemBlockInfusedCoreCompactor, BlockInfusedCoreCompactor, BlockTharditeOre, KtharMachineBlock}
 
 
 @Mod(name = "K'thar Techno-Magic", modid = "kthartechnomagic", version = "dev", modLanguage = "scala")
@@ -103,7 +103,8 @@ object KtharMagic {
     }
 
     //registerMachineBlock(BlockInfusedCoreCompactor)
-    GameRegistry.registerBlock(BlockAlmanditeOre, BlockAlmanditeOre.getUnlocalizedName)
+    GameRegistry.registerBlock(BlockTharditeOre, BlockTharditeOre.getUnlocalizedName)
+    GameRegistry.registerBlock(BlockInfusedCoreCompactor, classOf[ItemBlockInfusedCoreCompactor],BlockInfusedCoreCompactor.getUnlocalizedName)
   }
 
   /**

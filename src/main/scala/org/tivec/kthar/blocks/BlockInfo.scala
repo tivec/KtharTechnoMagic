@@ -9,6 +9,6 @@ object BlockInfo {
   var InfusedCoreCompactorID = 3600
   val InfusedCoreCompactorKey = "infusedCoreCompactor"
 
-  var AlmanditeOreID = 3601
-  val AlmanditeOreKey = "almanditeOre"
+  var TharditeOreID = 3601
+  val TharditeOreKey = "tharditeOre"
 }

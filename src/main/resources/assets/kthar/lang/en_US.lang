@@ -12,3 +12,6 @@ item.redstoneInfusedCross.name=Redstone Infused Cross
 item.ironCore.name=Redstone Infused Iron Core
 item.goldCore.name=Redstone Infused Gold Core
 item.diamondCore.name=Redstone Infused Diamond Core
+
+tile.infusedCoreCompactor.name=Infused Core Compactor
+tile.tharditeOre.name=Thardîte Ore
