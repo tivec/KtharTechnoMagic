@@ -80,13 +80,13 @@ abstract class KtharMachineBlock(blockId : Int, blockMaterial: Material, unlocal
     (metadata & KtharMachineBlock.ACTIVE_MASK) == KtharMachineBlock.ACTIVE_MASK
   }
 
-  def enable(metadata: Int): Int = {
-    metadata | KtharMachineBlock.ACTIVE_MASK
-  }
-
-  def disable(metadata: Int): Int = {
-    if (isEnabled(metadata)) {
-      return metadata ^ KtharMachineBlock.ACTIVE_MASK
+  def setActiveState(metadata: Int, state: Boolean): Int = {
+    if (state)
+      metadata | KtharMachineBlock.ACTIVE_MASK
+    else {
+      if (isEnabled(metadata)) {
+        return metadata ^ KtharMachineBlock.ACTIVE_MASK
+      }
     }
     metadata
   }

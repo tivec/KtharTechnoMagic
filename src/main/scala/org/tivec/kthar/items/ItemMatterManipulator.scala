@@ -25,9 +25,9 @@ object ItemMatterManipulator extends KtharItem(ItemInfo.MatterManipulatorID, Ite
 
         val enabled: Boolean = BlockInfusedCoreCompactor.isEnabled(meta)
         if (enabled) {
-          world.setBlockMetadataWithNotify(x,y,z,BlockInfusedCoreCompactor.disable(meta),3)
+          world.setBlockMetadataWithNotify(x,y,z,BlockInfusedCoreCompactor.setActiveState(meta,state = false),3)
         } else {
-          world.setBlockMetadataWithNotify(x,y,z,BlockInfusedCoreCompactor.enable(meta),3)
+          world.setBlockMetadataWithNotify(x,y,z,BlockInfusedCoreCompactor.setActiveState(meta,state = true),3)
         }
         return true
       }
