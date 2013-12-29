@@ -26,6 +26,9 @@ object ConfigHandler {
     ItemInfo.GoldCoreID               = config.getItem(ItemInfo.CATEGORY, ItemInfo.GoldCoreKey, ItemInfo.GoldCoreID).getInt - 256
     ItemInfo.DiamondCoreID            = config.getItem(ItemInfo.CATEGORY, ItemInfo.DiamondCoreKey, ItemInfo.DiamondCoreID).getInt - 256
 
+    ItemInfo.TharditeShardID          = config.getItem(ItemInfo.CATEGORY, ItemInfo.TharditeShardKey, ItemInfo.TharditeShardID).getInt - 256
+    ItemInfo.MatterManipulatorID      = config.getItem(ItemInfo.CATEGORY, ItemInfo.MatterManipulatorKey, ItemInfo.MatterManipulatorID).getInt - 256
+
     BlockInfo.InfusedCoreCompactorID  = config.getBlock(BlockInfo.CATEGORY, BlockInfo.InfusedCoreCompactorKey, BlockInfo.InfusedCoreCompactorID).getInt
     BlockInfo.TharditeOreID          = config.getBlock(BlockInfo.CATEGORY, BlockInfo.TharditeOreKey, BlockInfo.TharditeOreID).getInt
 

@@ -13,5 +13,9 @@ item.ironCore.name=Redstone Infused Iron Core
 item.goldCore.name=Redstone Infused Gold Core
 item.diamondCore.name=Redstone Infused Diamond Core
 
+item.tharditeShard.name=Thardîte Shard
+item.matterManipulator.name=Thardîte Matter Manipulator
+
 tile.infusedCoreCompactor.name=Infused Core Compactor
 tile.tharditeOre.name=Thardîte Ore
+

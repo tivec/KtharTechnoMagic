@@ -125,6 +125,9 @@ object KtharMagic {
     registerItem(ItemCoreGold)
     registerItem(ItemCoreDiamond)
 
+    registerItem(ItemTharditeShard)
+    registerItem(ItemMatterManipulator)
+
   }
 
   /**

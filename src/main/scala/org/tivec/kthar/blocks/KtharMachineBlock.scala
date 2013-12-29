@@ -4,11 +4,11 @@ import net.minecraft.block.material.Material
 import net.minecraft.block.{Block, BlockContainer}
 import org.tivec.kthar.KtharMagic
 import net.minecraft.tileentity.TileEntity
-import net.minecraft.util.{MathHelper, Icon}
+import net.minecraft.util.{ResourceLocation, MathHelper, Icon}
 import net.minecraft.client.renderer.texture.IconRegister
 import net.minecraft.world.{IBlockAccess, World}
 import net.minecraftforge.common.ForgeDirection
-import net.minecraft.entity.EntityLivingBase
+import net.minecraft.entity.{Entity, EntityLivingBase}
 import net.minecraft.item.ItemStack
 
 /**
@@ -28,7 +28,6 @@ abstract class KtharMachineBlock(blockId : Int, blockMaterial: Material, unlocal
   setStepSound(Block.soundMetalFootstep)
   setUnlocalizedName(BlockInfo.InfusedCoreCompactorKey)
 
-
   /**
    * @return Class representing the tile entity associated with this block.
    */
@@ -40,7 +39,7 @@ abstract class KtharMachineBlock(blockId : Int, blockMaterial: Material, unlocal
   var activeIcon: Icon = null
 
   /**
-   * Stores the icons used for the non-face sides of the machine when it is active (1) or inactive (0)
+   * Stores the icons used for the non-face sides of the machine
    */
   var sideIcon: Icon = null
 
@@ -55,12 +54,13 @@ abstract class KtharMachineBlock(blockId : Int, blockMaterial: Material, unlocal
    * @param iconRegister  Icon register that Minecraft will use when stitching the texture atlas.
    */
   override def registerIcons(iconRegister: IconRegister) = {
+
     blockIcon = iconRegister.registerIcon(s"${KtharMagic.ASSET_DIR}:machine/${getUnlocalizedName}_Front")
     activeIcon = iconRegister.registerIcon(s"${KtharMagic.ASSET_DIR}:machine/${getUnlocalizedName}_Active")
 
-    if(isRotationSensitive) {
+    if(isRotationSensitive)
       sideIcon = iconRegister.registerIcon(s"${KtharMagic.ASSET_DIR}:machine/${getUnlocalizedName}_Side")
-    }
+
   }
 
   /**
@@ -76,6 +76,31 @@ abstract class KtharMachineBlock(blockId : Int, blockMaterial: Material, unlocal
     }
   }
 
+  def isEnabled(metadata: Int): Boolean = {
+    (metadata & KtharMachineBlock.ACTIVE_MASK) == KtharMachineBlock.ACTIVE_MASK
+  }
+
+  def enable(metadata: Int): Int = {
+    metadata | KtharMachineBlock.ACTIVE_MASK
+  }
+
+  def disable(metadata: Int): Int = {
+    if (isEnabled(metadata)) {
+      return metadata ^ KtharMachineBlock.ACTIVE_MASK
+    }
+    metadata
+  }
+
+  def getRotation(metadata: Int): Int = {
+    metadata & KtharMachineBlock.ROTATION_MASK
+  }
+
+  def isActiveSide(side: Int, metadata: Int): Boolean = {
+    if(isRotationSensitive && side == (metadata & KtharMachineBlock.ROTATION_MASK))
+      return true
+
+    false
+  }
 
   /**
    * Returns the icon for the given side, based on the metadata of the block, rotation and active state.
@@ -91,7 +116,7 @@ abstract class KtharMachineBlock(blockId : Int, blockMaterial: Material, unlocal
     if(isRotationSensitive && side != (metadata & KtharMachineBlock.ROTATION_MASK))
       return sideIcon
 
-    if((metadata & KtharMachineBlock.ACTIVE_MASK) == KtharMachineBlock.ACTIVE_MASK)
+    if(isEnabled(metadata))
       return activeIcon
 
     blockIcon
@@ -130,7 +155,10 @@ abstract class KtharMachineBlock(blockId : Int, blockMaterial: Material, unlocal
    * @param player      Player that places it
    * @param itemstack   The itemstack
    */
-  override def onBlockPlacedBy(world: World, x: Int, y: Int, z: Int, player: EntityLivingBase, itemstack: ItemStack) = {
+  override def onBlockPlacedBy(world: World, x: Int, y: Int, z: Int, player: EntityLivingBase, itemstack: ItemStack) {
+    if(!isRotationSensitive)
+      return
+
     super.onBlockPlacedBy(world, x, y, z, player, itemstack)
     val l: Int = MathHelper.floor_double((player.rotationYaw * 4.0f /360.0f) +0.5f) & 3
 
@@ -143,13 +171,8 @@ abstract class KtharMachineBlock(blockId : Int, blockMaterial: Material, unlocal
       case 3 => 4
     }
 
-
     metadata = isActive | (dir & KtharMachineBlock.ROTATION_MASK)
-
     world.setBlockMetadataWithNotify(x, y, z, metadata, 2)
 
   }
-
-
-
 }

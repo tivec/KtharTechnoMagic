@@ -86,8 +86,19 @@ object ItemRecipes {
       '/':Character, new ItemStack(ItemRIPiece),
       'r':Character, Item.redstone))
 
-
-
+    /********************************************************
+     * Thardîte Matter Manipulator
+     ********************************************************/
+   GameRegistry.addRecipe(new ShapedOreRecipe(
+    new ItemStack(ItemMatterManipulator),
+     " TX",
+     " LT",
+     "/  ",
+     '/': Character, new ItemStack(ItemRIPiece),
+     'L': Character, Item.leather,
+     'T': Character, new ItemStack(ItemTharditeShard),
+     'X': Character, new ItemStack(ItemRICross)
+   ))
   }
 
 }

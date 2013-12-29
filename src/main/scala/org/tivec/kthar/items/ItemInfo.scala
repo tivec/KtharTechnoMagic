@@ -43,5 +43,11 @@ object ItemInfo {
   var DiamondCoreID = 25008
   val DiamondCoreKey = "diamondCore"
 
+  // Thardite Shard
+  var TharditeShardID = 25009
+  val TharditeShardKey = "tharditeShard"
+
+  var MatterManipulatorID = 25010
+  val MatterManipulatorKey = "matterManipulator"
 
 }
